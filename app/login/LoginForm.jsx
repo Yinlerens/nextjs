@@ -1,29 +1,36 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Form, Input, message, Space } from 'antd';
 import { UserOutlined, LockOutlined, CloseCircleOutlined } from '@ant-design/icons';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import useSWR from 'swr';
+import axios from 'axios';
 const LoginForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const [loginForm, setLoginForm] = useState(false);
+  const [shouldFetch, setShouldFetch] = useState(false);
   const router = useRouter();
-  // 登录
-  const onFinish = async loginForm => {
-    setLoading(true);
-    const {
-      data: { code }
-    } = await axios.post('/api/login', loginForm);
-    console.log('%c [ code ]-15', 'font-size:13px; background:pink; color:#bf2c9f;', code);
-    if (code) {
-      router.push('/home');
-      setLoading(false);
-    } else {
-      setLoading(false);
-      message.error(data.message);
-    }
-  };
+  const fetcher = ({ url, body }) => axios.post(url, body).then(r => r.data);
 
+  const { data } = useSWR(shouldFetch ? { url: '/api/login', body: loginForm } : null, fetcher);
+  const onFinish = value => {
+    setLoading(true);
+    setShouldFetch(true);
+    setLoginForm(value);
+  };
+  useEffect(() => {
+    if (!data) return;
+    if (!data.success) {
+      message.error(data.message);
+      setLoading(false);
+      setLoginForm(null);
+      setShouldFetch(false);
+    } else {
+      message.success('登陆成功');
+      router.push('/home');
+    }
+  }, [data]);
   return (
     <Form
       form={form}
