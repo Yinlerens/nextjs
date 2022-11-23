@@ -33,8 +33,8 @@ const AssemblySize = () => {
   ];
 
   return (
-    <Dropdown menu={{items}} placement="bottom" trigger={['click']} arrow={true}>
-      <i className="icon-style iconfont icon-contentright"></i>
+    <Dropdown menu={{ items }} placement="bottom" trigger={['click']} arrow={true}>
+      <i className="mr-5 text-lg cursor-pointer iconfont icon-contentright"></i>
     </Dropdown>
   );
 };

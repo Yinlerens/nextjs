@@ -5,7 +5,7 @@ const CollapseIcon = () => {
 const{menuStore:{isCollapse,updateCollapse}}=	useStore()
 	return (
 		<div
-			className="collapsed"
+			className="mr-5 text-lg cursor-pointer transition-colors"
 			onClick={() => {
 				updateCollapse(!isCollapse);
 			}}

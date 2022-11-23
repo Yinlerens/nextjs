@@ -5,22 +5,21 @@ import BreadcrumbNav from './components/BreadcrumbNav';
 import AssemblySize from './components/AssemblySize';
 import Theme from './components/Theme';
 import Fullscreen from './components/Fullscreen';
-import './index.less';
 
 const LayoutHeader = () => {
   const { Header } = Layout;
 
   return (
     <Header>
-      <div className="header-lf">
+      <div className="flex items-center">
         <CollapseIcon />
         <BreadcrumbNav />
       </div>
-      <div className="header-ri">
+      <div className="flex items-center">
         <AssemblySize />
-        <Theme />
+        {/* <Theme /> */}
         <Fullscreen />
-        <span className="username">EVA</span>
+        <span className="mr-5 text-base">EVA</span>
         <AvatarIcon />
       </div>
     </Header>

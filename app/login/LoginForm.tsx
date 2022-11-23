@@ -5,16 +5,19 @@ import { UserOutlined, LockOutlined, CloseCircleOutlined } from '@ant-design/ico
 import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import axios from 'axios';
+interface body {
+  [key: string]: string;
+}
 const LoginForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [loginForm, setLoginForm] = useState(false);
+  const [loginForm, setLoginForm] = useState({});
   const [shouldFetch, setShouldFetch] = useState(false);
   const router = useRouter();
-  const fetcher = ({ url, body }) => axios.post(url, body).then(r => r.data);
-
+  const fetcher = ({ url, body }: { url: string; body: body }) =>
+    axios.post(url, body).then(r => r.data);
   const { data } = useSWR(shouldFetch ? { url: '/api/login', body: loginForm } : null, fetcher);
-  const onFinish = value => {
+  const onFinish = (value: body) => {
     setLoading(true);
     setShouldFetch(true);
     setLoginForm(value);
@@ -24,11 +27,11 @@ const LoginForm = () => {
     if (!data.success) {
       message.error(data.message);
       setLoading(false);
-      setLoginForm(null);
+      setLoginForm({});
       setShouldFetch(false);
     } else {
       message.success('登陆成功');
-      router.push('/home');
+      router.push('/dashboard');
     }
   }, [data]);
   return (

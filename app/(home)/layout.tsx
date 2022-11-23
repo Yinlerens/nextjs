@@ -6,6 +6,8 @@ import LayoutFooter from './components/Footer';
 import { Layout } from 'antd';
 import { useEffect } from 'react';
 import { useStore } from '@/store';
+import axios from 'axios';
+import useSWR from 'swr';
 const { Sider, Content } = Layout;
 
 export default function App({ children }: { children: React.ReactNode }) {
@@ -13,12 +15,7 @@ export default function App({ children }: { children: React.ReactNode }) {
     menuStore: { isCollapse, updateCollapse },
     authStore: { setAuthButtons }
   } = useStore();
-
-  // 获取按钮权限列表
-  //  const getAuthButtonsList = async () => {
-  //    const { data } = await getAuthorButtons();
-  //    setAuthButtons(data);
-  //  };
+  const { data } = useSWR('/api/router', url => axios.get(url).then(r => r.data));
 
   // 监听窗口大小变化
   const listeningWindow = () => {
@@ -33,34 +30,31 @@ export default function App({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     listeningWindow();
-    // getAuthButtonsList();
   }, []);
-
+  useEffect(() => {
+    if (!data) return;
+    setAuthButtons(data);
+  }, [data]);
   return (
-    <html lang="zh">
-      <head></head>
-      <body>
-        <Layout className="h-full">
-          <Sider trigger={null} collapsed={isCollapse} width={220} theme="light">
-            {/* <LayoutMenu /> */}
-          </Sider>
-          <Layout className="site-layout">
-            {/* <LayoutHeader /> */}
-            {/* <LayoutTabs /> */}
-            <Content
-              className="site-layout-background"
-              style={{
-                margin: '24px 16px',
-                padding: 24,
-                minHeight: 280
-              }}
-            >
-              {children}
-            </Content>
-            {/* <LayoutFooter /> */}
-          </Layout>
-        </Layout>
-      </body>
-    </html>
+    <Layout className="h-full">
+      <Sider trigger={null} collapsed={isCollapse} width={220} theme="light">
+        <LayoutMenu />
+      </Sider>
+      <Layout className="site-layout">
+        {/* <LayoutHeader /> */}
+        {/* <LayoutTabs /> */}
+        <Content
+          className="site-layout-background"
+          style={{
+            margin: '24px 16px',
+            padding: 24,
+            minHeight: 280
+          }}
+        >
+          {children}
+        </Content>
+        {/* <LayoutFooter /> */}
+      </Layout>
+    </Layout>
   );
 }
