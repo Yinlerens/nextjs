@@ -1,16 +1,15 @@
-import {observer} from "mobx-react-lite";
-import "./index.less";
-import {useStore} from "@/store/index.js";
+import { observer } from 'mobx-react-lite';
+import { useStore } from '@/store/index.js';
 
 const LayoutFooter = () => {
-  const {globalStore: {themeConfig}} = useStore()
+  const {
+    globalStore: { themeConfig }
+  } = useStore();
   return (
     <>
       {!themeConfig.footer && (
-        <div className="footer">
-          <a href="http://www.spicyboy.cn/" target="_blank" rel="noreferrer">
-            2022 © Hooks-Admin By Hooks Technology.
-          </a>
+        <div className="flex items-center justify-center h-8 border-t border-[#e4e7ed]">
+          2022 © Hooks-Admin By Hooks Technology.
         </div>
       )}
     </>

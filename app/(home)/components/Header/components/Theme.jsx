@@ -1,9 +1,9 @@
+'use client';
 import { Drawer, Divider, Switch } from 'antd';
 import { useState } from 'react';
-import { FireOutlined, SettingOutlined } from '@ant-design/icons';
-import SwitchDark from '@/components/SwitchDark';
+import { SettingOutlined } from '@ant-design/icons';
 import { useStore } from '@/store/index.js';
-import {observer} from "mobx-react-lite";
+import { observer } from 'mobx-react-lite';
 
 const Theme = () => {
   const [visible, setVisible] = useState(false);
@@ -11,12 +11,7 @@ const Theme = () => {
     globalStore: { setThemeConfig, themeConfig },
     menuStore: { updateCollapse, isCollapse }
   } = useStore();
-  const { weakOrGray, breadcrumb, tabs, footer } = themeConfig;
-
-  const setWeakOrGray = (checked, theme) => {
-    if (checked) return setThemeConfig({ ...themeConfig, weakOrGray: theme });
-    setThemeConfig({ ...themeConfig, weakOrGray: '' });
-  };
+  const { breadcrumb, tabs, footer } = themeConfig;
 
   const onChange = (checked, keyName) => {
     return setThemeConfig({ ...themeConfig, [keyName]: !checked });
@@ -24,12 +19,12 @@ const Theme = () => {
 
   return (
     <>
-      <i
-        className="icon-style iconfont icon-zhuti"
+      <SettingOutlined
+        className="text-xl leading-5 mr-5"
         onClick={() => {
           setVisible(true);
         }}
-      ></i>
+      />
       <Drawer
         title="布局设置"
         closable={false}
@@ -39,40 +34,9 @@ const Theme = () => {
         open={visible}
         width={320}
       >
-        {/* 全局主题 */}
-        <Divider className="divider">
-          <FireOutlined />
-          全局主题
-        </Divider>
-        <div className="theme-item">
-          <span>暗黑模式</span>
-          <SwitchDark />
-        </div>
-        <div className="theme-item">
-          <span>灰色模式</span>
-          <Switch
-            checked={weakOrGray === 'gray'}
-            onChange={e => {
-              setWeakOrGray(e, 'gray');
-            }}
-          />
-        </div>
-        <div className="theme-item">
-          <span>色弱模式</span>
-          <Switch
-            checked={weakOrGray === 'weak'}
-            onChange={e => {
-              setWeakOrGray(e, 'weak');
-            }}
-          />
-        </div>
-        <br />
         {/* 界面设置 */}
-        <Divider className="divider">
-          <SettingOutlined />
-          界面设置
-        </Divider>
-        <div className="theme-item">
+        <Divider className="divider">界面设置</Divider>
+        <div className="flex justify-between items-center my-6">
           <span>折叠菜单</span>
           <Switch
             checked={isCollapse}
@@ -81,7 +45,7 @@ const Theme = () => {
             }}
           />
         </div>
-        <div className="theme-item">
+        <div className="flex justify-between items-center my-6">
           <span>面包屑导航</span>
           <Switch
             checked={!breadcrumb}
@@ -90,7 +54,7 @@ const Theme = () => {
             }}
           />
         </div>
-        <div className="theme-item">
+        <div className="flex justify-between items-center my-6">
           <span>标签栏</span>
           <Switch
             checked={!tabs}
@@ -99,7 +63,7 @@ const Theme = () => {
             }}
           />
         </div>
-        <div className="theme-item">
+        <div className="flex justify-between items-center my-6">
           <span>页脚</span>
           <Switch
             checked={!footer}

@@ -1,19 +1,18 @@
 import { useRef } from 'react';
 import { Avatar, Modal, Dropdown, message } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
 import { HOME_URL } from '@/config/config';
 import PasswordModal from './PasswordModal';
 import InfoModal from './InfoModal';
-import avatar from '@/assets/images/avatar.png';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/store/index.js';
+import { useRouter } from 'next/navigation';
 
 const AvatarIcon = () => {
   const {
     globalStore: { removeToken }
   } = useStore();
-  const navigate = useNavigate();
+  const router = useRouter();
   const passRef = useRef(null);
   const infoRef = useRef(null);
 
@@ -28,7 +27,7 @@ const AvatarIcon = () => {
       onOk: () => {
         removeToken();
         message.success('退出登录成功！');
-        navigate('/login');
+        router.replace('/login');
       }
     });
   };
@@ -38,7 +37,7 @@ const AvatarIcon = () => {
     {
       key: '1',
       label: <span className="dropdown-item">首页</span>,
-      onClick: () => navigate(HOME_URL)
+      onClick: () => router.push(HOME_URL)
     },
     {
       key: '2',
@@ -62,7 +61,7 @@ const AvatarIcon = () => {
   return (
     <>
       <Dropdown menu={{ items }} placement="bottom" arrow trigger={['click']}>
-        <Avatar size="large" src={avatar} />
+        <Avatar size="large" src="https://joeschmoe.io/api/v1/random" />
       </Dropdown>
       <InfoModal innerRef={infoRef}></InfoModal>
       <PasswordModal innerRef={passRef}></PasswordModal>

@@ -6,11 +6,6 @@
     display: contents;
   }
 }
-@layer base {
-  [type='submit'] {
-    background-color: #1677ff;
-  }
-}
 html,
 body {
   padding: 0;

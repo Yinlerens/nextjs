@@ -1,7 +1,8 @@
+'use client';
 import { Dropdown } from 'antd';
 import { useStore } from '@/store/index.js';
 import { observer } from 'mobx-react-lite';
-
+import { ColumnHeightOutlined } from '@ant-design/icons';
 const AssemblySize = () => {
   const {
     globalStore: { assemblySize, setAssemblySize }
@@ -34,7 +35,7 @@ const AssemblySize = () => {
 
   return (
     <Dropdown menu={{ items }} placement="bottom" trigger={['click']} arrow={true}>
-      <i className="mr-5 text-lg cursor-pointer iconfont icon-contentright"></i>
+      <ColumnHeightOutlined className="mr-5 text-xl  leading-5 cursor-pointer" />
     </Dropdown>
   );
 };

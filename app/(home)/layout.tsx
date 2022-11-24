@@ -1,16 +1,17 @@
 'use client';
 import LayoutMenu from './components/Menu';
 import LayoutHeader from './components/Header';
-import LayoutTabs from './components/Tabs';
+// import LayoutTabs from './components/Tabs';
 import LayoutFooter from './components/Footer';
 import { Layout } from 'antd';
 import { useEffect } from 'react';
 import { useStore } from '@/store';
 import axios from 'axios';
 import useSWR from 'swr';
+import { observer } from 'mobx-react-lite';
 const { Sider, Content } = Layout;
-
-export default function App({ children }: { children: React.ReactNode }) {
+observer;
+function App({ children }: { children: React.ReactNode }) {
   const {
     menuStore: { isCollapse, updateCollapse },
     authStore: { setAuthButtons }
@@ -41,20 +42,12 @@ export default function App({ children }: { children: React.ReactNode }) {
         <LayoutMenu />
       </Sider>
       <Layout className="site-layout">
-        {/* <LayoutHeader /> */}
+        <LayoutHeader />
         {/* <LayoutTabs /> */}
-        <Content
-          className="site-layout-background"
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280
-          }}
-        >
-          {children}
-        </Content>
-        {/* <LayoutFooter /> */}
+        <Content className="site-layout-background">{children}</Content>
+        <LayoutFooter />
       </Layout>
     </Layout>
   );
 }
+export default observer(App);

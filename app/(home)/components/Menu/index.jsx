@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Menu, Spin } from 'antd';
 import { findAllBreadcrumb, getOpenKeys, handleRouter, searchRoute } from '@/utils/util';
 import * as Icons from '@ant-design/icons';
-// import Logo from './components/Logo';
+import Logo from './components/Logo';
 import { useStore } from '@/store/index.js';
 import { observer } from 'mobx-react-lite';
 import { usePathname, useRouter } from 'next/navigation';
@@ -97,7 +97,7 @@ const LayoutMenu = () => {
   return (
     <div className="flex flex-col justify-between h-full">
       <Spin spinning={loading} tip="Loading...">
-        {/* <Logo></Logo> */}
+        <Logo></Logo>
         <Menu
           theme="light"
           mode="inline"
