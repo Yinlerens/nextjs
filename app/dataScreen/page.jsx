@@ -12,13 +12,7 @@ import Headertime from './components/DataHeaderTime';
 import dataScreenTitle from '@/public/images/dataScreen-title.png';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { useEffect } from 'react';
-import localFont from '@next/font/local';
-const myFont = localFont({
-  src: '../../public/fonts/YouSheBiaoTiHei.ttf',
-  variable: '--font-inter'
-});
-console.log('%c [ myFont ]-18', 'font-size:13px; background:pink; color:#bf2c9f;', myFont);
+
 const DataScreen = () => {
   const router = useRouter();
   const handleTo = () => {
@@ -35,26 +29,27 @@ const DataScreen = () => {
 
   /* 根据浏览器大小推断缩放比例 */
   const getScale = (width = 1920, height = 1080) => {
-    let ww = window.innerWidth / width;
-    let wh = window.innerHeight / height;
-    return ww < wh ? ww : wh;
+    if (typeof window !== undefined) {
+      let ww = window.innerWidth / width;
+      let wh = window.innerHeight / height;
+      return ww < wh ? ww : wh;
+    }
   };
 
   useLayoutEffect(() => {
-    if (dataScreenRef.current) {
+    if (dataScreenRef.current && typeof window !== undefined) {
       dataScreenRef.current.style.transform = `scale(${getScale()}) translate(-50%, -50%)`;
       dataScreenRef.current.style.width = `1920px`;
       dataScreenRef.current.style.height = `1080px`;
     }
     // 为浏览器绑定事件
-    window.addEventListener('resize', resize);
-    return () => {
-      window.removeEventListener('resize', resize);
-    };
+    if (typeof window !== undefined) {
+      window.addEventListener('resize', resize);
+      return () => {
+        window.removeEventListener('resize', resize);
+      };
+    }
   }, []);
-  useEffect(() => {
-    console.log('[ window ] >', window);
-  }, [window]);
   return (
     <div className="w-full h-full bg-[url('../public/images/bg.png')] bg-no-repeat bg-fixed bg-center bg-cover">
       <div
