@@ -30,7 +30,6 @@ const LoginForm = () => {
       setLoginForm({});
       setShouldFetch(false);
     } else {
-      message.success('登陆成功');
       router.push('/dashboard');
     }
   }, [data]);

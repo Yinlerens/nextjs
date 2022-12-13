@@ -1,5 +1,4 @@
 import { PrismaClient } from '@prisma/client';
-import { verifyToken } from '../../../utils/jwt';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
@@ -18,16 +17,13 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
           message: 'Unauthorized'
         });
       }
-      const authorId = (await verifyToken(req.cookies.token)).id;
       prisma = new PrismaClient();
       const newPost = await prisma.post.create({
         data: {
-          title: req.body.title,
-          content: req.body.content,
+          message: req.body.message,
+          img: req.body.img,
           createdAt: new Date(),
-          authorId,
-          tags: req.body.tags.join(','),
-          imageUrl: req.body.imageUrl
+          username: req.body.username
         }
       });
       res.status(200).json(newPost);

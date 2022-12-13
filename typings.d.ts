@@ -1,6 +1,6 @@
-export type Todo = {
-  userId: number;
-  id: number;
-  title: string;
-  complted: boolean;
+export type Message = {
+  message: string;
+  create_at: number;
+  img: string;
+  username: string;
 };

@@ -61,7 +61,7 @@ const AvatarIcon = () => {
   return (
     <>
       <Dropdown menu={{ items }} placement="bottom" arrow trigger={['click']}>
-        <Avatar size="large" src="https://joeschmoe.io/api/v1/random" />
+        <Avatar size="large" src="https://api.multiavatar.com/www.miigua.com.svg" />
       </Dropdown>
       <InfoModal innerRef={infoRef}></InfoModal>
       <PasswordModal innerRef={passRef}></PasswordModal>

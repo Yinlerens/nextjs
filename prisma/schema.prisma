@@ -1,33 +1,25 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider             = "mysql"
-  referentialIntegrity = "prisma"
-  url                  = env("DATABASE_URL")
+  provider     = "mysql"
+  relationMode = "prisma"
+  url          = env("DATABASE_URL")
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
-  content   String?
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
-  imageUrl  String?
-  tags      String
-
-  @@index(authorId)
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  message    String
+  img        String
+  username   String
 }
 
 model User {
   id           Int    @id @default(autoincrement())
   username     String @unique
   passwordHash String
-  posts        Post[]
 }
 
 model Router {
