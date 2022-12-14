@@ -16,7 +16,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         prisma = new PrismaClient();
         post = await prisma.post.findUnique({
           where: { id: +req.body.postId },
-          include: { author: true }
         });
         if (post) {
           res.status(200).json(post);

@@ -6,7 +6,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'GET':
       prisma = new PrismaClient();
-      const allPosts = await prisma.post.findMany({ include: { author: true } });
+      const allPosts = await prisma.post.findMany();
       res.status(200).json(allPosts);
       await prisma.$disconnect();
       break;
@@ -22,7 +22,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         data: {
           message: req.body.message,
           img: req.body.img,
-          createdAt: new Date(),
+          created_at: new Date(),
           username: req.body.username
         }
       });
