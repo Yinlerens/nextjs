@@ -71,7 +71,7 @@ const LoginForm = () => {
             loading={loading}
             icon={<UserOutlined />}
           >
-            登录/注册
+            登录
           </Button>
         </Space>
       </Form.Item>
