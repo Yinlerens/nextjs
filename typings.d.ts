@@ -1,6 +1,7 @@
 export type Message = {
+  id: string;
   message: string;
-  create_at: number;
+  created_at: number;
   img: string;
   username: string;
 };

@@ -11,22 +11,25 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       try {
         // 建立一个 Prisma 客户端，他可以帮助我们连线到数据库
         const prisma = new PrismaClient();
-
-        // 在数据库的 User 表中建立一个新的数据
-        const user = await prisma.user.create({
-          data: {
-            username: req.body.username,
-            // 密码是经过 bcrypt 加密的
-            passwordHash: bcrypt.hashSync(req.body.password, 8)
-          }
+        const isUser = await prisma.user.findUnique({
+          where: { username: req.body.username }
         });
-
-        // 把建立成功的用户数据（不包含密码）和 JWT 回传给前端
-        res
-          .status(201)
-          .setHeader('set-cookie', 'token=' + (await signToken(user.id)))
-          .json({ code: '200', success: true, message: 'success' });
-
+        if (isUser) {
+          res.status(500).json({ code: 200, success: true, message: '用户已存在' });
+          return;
+        } else {
+          const user = await prisma.user.create({
+            data: {
+              username: req.body.username,
+              // 密码是经过 bcrypt 加密的
+              passwordHash: bcrypt.hashSync(req.body.password, 8)
+            }
+          });
+          res
+            .status(201)
+            .setHeader('set-cookie', 'token=' + (await signToken(user.id)))
+            .json({ code: '200', success: true, message: '注册成功' });
+        }
         // 处理完请求以后记得断开数据库链接
         await prisma.$disconnect();
       } catch (e: any) {

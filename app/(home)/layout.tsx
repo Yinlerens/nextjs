@@ -7,16 +7,17 @@ import { Layout } from 'antd';
 import { useEffect } from 'react';
 import { useStore } from '@/store';
 import axios from 'axios';
-import useSWR from 'swr';
+import useSWR, { preload } from 'swr';
 import { observer } from 'mobx-react-lite';
 const { Sider, Content } = Layout;
-observer;
+const fetcher = (url: string) => axios.get(url).then(r => r.data);
+preload('/api/router', fetcher);
 function App({ children }: { children: React.ReactNode }) {
   const {
     menuStore: { isCollapse, updateCollapse },
     authStore: { setAuthButtons }
   } = useStore();
-  const { data } = useSWR('/api/router', url => axios.get(url).then(r => r.data));
+  const { data } = useSWR('/api/router', fetcher);
 
   // 监听窗口大小变化
   const listeningWindow = () => {

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Button, Form, Input, message, Space } from 'antd';
 import { UserOutlined, LockOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
-import useSWR from 'swr';
+import useSWRImmutable from 'swr/immutable';
 import axios from 'axios';
 interface body {
   [key: string]: string;
@@ -16,7 +16,10 @@ const LoginForm = () => {
   const router = useRouter();
   const fetcher = ({ url, body }: { url: string; body: body }) =>
     axios.post(url, body).then(r => r.data);
-  const { data } = useSWR(shouldFetch ? { url: '/api/login', body: loginForm } : null, fetcher);
+  const { data, error } = useSWRImmutable(
+    shouldFetch ? { url: '/api/login', body: loginForm } : null,
+    fetcher
+  );
   const onFinish = (value: body) => {
     setLoading(true);
     setShouldFetch(true);
@@ -30,9 +33,19 @@ const LoginForm = () => {
       setLoginForm({});
       setShouldFetch(false);
     } else {
+      message.success('正在登录···');
+      setLoading(false);
       router.push('/dashboard');
     }
   }, [data]);
+  useEffect(() => {
+    if (!error) return;
+    setLoading(false);
+    message.error('网络链接出错，请重试');
+  }, [error]);
+  useEffect(() => {
+    router.prefetch('/dashboard');
+  });
   return (
     <Form
       form={form}
@@ -71,7 +84,7 @@ const LoginForm = () => {
             loading={loading}
             icon={<UserOutlined />}
           >
-            登
+            登陆
           </Button>
         </Space>
       </Form.Item>

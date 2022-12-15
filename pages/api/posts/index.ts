@@ -1,13 +1,21 @@
 import { PrismaClient } from '@prisma/client';
+import redis from '@/redis';
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+import { Message } from '@/typings';
+type Data = {
+  message: Message;
+};
+type Error = {
+  message?: string;
+  error?: string;
+};
+export default async function (req: NextApiRequest, res: NextApiResponse<Data | Error>) {
   let prisma: PrismaClient;
   switch (req.method) {
     case 'GET':
       prisma = new PrismaClient();
       const allPosts = await prisma.post.findMany();
-      res.status(200).json(allPosts);
+      res.status(200).json({ message: 'c' });
       await prisma.$disconnect();
       break;
 
@@ -17,16 +25,22 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
           message: 'Unauthorized'
         });
       }
+      const { message } = req.body;
+      const newMessage = {
+        ...message,
+        created_at: new Date()
+      };
+      const newMessage2 = {
+        ...message,
+        created_at: new Date()
+      };
+      delete newMessage2.id;
+      await redis.hset('message', message.id, JSON.stringify(newMessage));
       prisma = new PrismaClient();
       const newPost = await prisma.post.create({
-        data: {
-          message: req.body.message,
-          img: req.body.img,
-          created_at: new Date(),
-          username: req.body.username
-        }
+        data: newMessage2
       });
-      res.status(200).json(newPost);
+      res.status(200).json({ message: newMessage });
       await prisma.$disconnect();
       break;
     default:

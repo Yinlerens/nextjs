@@ -7,7 +7,7 @@ const Login = () => {
     <div className="relative flex items-center justify-center min-w-[550px] h-full min-h-[500px] bg-cover bg-center bg-[url('../public/images/login_bg.svg')] bg-[#eee]">
       <div className="box-border flex items-center justify-around w-[96%] h-[94%] pr-[4%] pl-[20px] bg-[#ffffffcc] rounded-xl">
         <div className="w-[750px] ">
-          <Image src={loginLeft} alt="login" />
+          <Image src={loginLeft} alt="login" priority />
         </div>
         <div className="pt-[40px] px-[45px] pb-[25px]  bg-transparent shadow-[2px_3px_7px_rgba(0,0,0,0.2)] rounded-[10px]">
           <div className="flex items-center justify-center mb-[40px]">
