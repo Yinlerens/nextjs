@@ -57,7 +57,7 @@ const Theme = () => {
         <div className="flex justify-between items-center my-6">
           <span>标签栏</span>
           <Switch
-            checked={!tabs}
+            checked={tabs}
             onChange={e => {
               onChange(e, 'tabs');
             }}

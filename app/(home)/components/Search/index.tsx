@@ -29,6 +29,7 @@ function index() {
   }, [data]);
   return (
     <Search
+      className="w-full pt-2"
       placeholder="input search text"
       enterButton="send"
       size="large"

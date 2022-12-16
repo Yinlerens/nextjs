@@ -5,7 +5,7 @@ import { useStore } from '@/store/index.js';
 import { usePathname } from 'next/navigation';
 
 const BreadcrumbNav = () => {
-  const { pathname } = usePathname();
+  const pathname = usePathname();
   const {
     globalStore: { themeConfig },
     breadcrumbStore

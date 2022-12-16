@@ -1,7 +1,7 @@
 'use client';
 import LayoutMenu from './components/Menu';
 import LayoutHeader from './components/Header';
-// import LayoutTabs from './components/Tabs';
+import LayoutTabs from './components/Tabs';
 import LayoutFooter from './components/Footer';
 import { Layout } from 'antd';
 import { useEffect } from 'react';
@@ -38,13 +38,13 @@ function App({ children }: { children: React.ReactNode }) {
     setAuthButtons(data);
   }, [data]);
   return (
-    <Layout className="h-full">
+    <Layout className="h-full !flex-row">
       <Sider trigger={null} collapsed={isCollapse} width={220} theme="light">
         <LayoutMenu />
       </Sider>
       <Layout className="site-layout">
         <LayoutHeader />
-        {/* <LayoutTabs /> */}
+        <LayoutTabs />
         <Content className="site-layout-background">{children}</Content>
         <LayoutFooter />
       </Layout>
