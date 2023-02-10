@@ -48,10 +48,9 @@ const LayoutMenu = () => {
       type
     };
   };
-  // 处理后台返回菜单 key 值为 antd 菜单需要的 key 值
   const deepLoopFloat = (menuList, newArr = []) => {
-    menuList.forEach(item => {
-      // 下面判断代码解释 *** !item?.children?.length   ==>   (!item.children || item.children.length === 0)
+    if (!menuList) return;
+    menuList?.forEach(item => {
       if (!item?.children?.length) {
         return newArr.push(getItem(item?.title, item?.path, addIcon(item?.icon)));
       }
@@ -62,7 +61,6 @@ const LayoutMenu = () => {
     return newArr;
   };
 
-  // 获取菜单列表并处理成 antd menu 需要的格式
   const [List, setMenuList] = useState([]);
   const [loading, setLoading] = useState(false);
   const { data } = useSWR('/api/router', url => axios.get(url).then(r => r.data));
@@ -71,9 +69,7 @@ const LayoutMenu = () => {
     try {
       if (!data) return;
       setMenuList(deepLoopFloat(data));
-      // 存储处理过后的所有面包屑导航栏到 redux 中
       setBreadcrumbList(findAllBreadcrumb(data));
-      // 把路由菜单处理成一维数组，存储到 redux 中，做菜单权限判断
       const dynamicRouter = handleRouter(data);
       setAuthRouter(dynamicRouter);
       setMenuListAction(data);
@@ -85,7 +81,6 @@ const LayoutMenu = () => {
     getMenuData();
   }, [data]);
 
-  // 点击当前菜单跳转页面
   const router = useRouter();
   const clickMenu = ({ key }) => {
     const route = searchRoute(key, menuList);

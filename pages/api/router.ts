@@ -1,3 +1,4 @@
+import redis from '@/redis';
 import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -6,15 +7,8 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'GET':
       prisma = new PrismaClient();
-      const allPosts = await prisma.router.findMany({
-        select: {
-          id: false,
-          title: true,
-          icon: true,
-          path: true
-        }
-      });
-      res.status(200).json(allPosts);
+      const router = await redis.hget('menu', 'menu');
+      res.status(200).json(JSON.parse(router as string) );
       await prisma.$disconnect();
       break;
 
