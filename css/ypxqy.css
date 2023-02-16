@@ -1,0 +1,873 @@
+@charset "UTF-8";
+a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.modal {
+  width: 444px;
+  height: 532px;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal .modalMainbox {
+  width: 424px;
+  height: 512px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+.modal .modalMainbox .guan {
+  width: 44px;
+  height: 44px;
+  border-radius: 0px 0px 0px 44px;
+  background-color: #b2b2b2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox {
+  width: 343px;
+  height: 410px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal .modalMainbox .bigbox .title {
+  width: 343px;
+  height: 34px;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: solid 1px #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.modal .modalMainbox .bigbox .title .titleRegister {
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  margin-right: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .title .titleLogin {
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .formdivDl {
+  width: 343px;
+  height: 376px;
+  display: none;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .tel {
+  width: 330px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .psw {
+  width: 330px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma {
+  width: 340px;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma .yanzhen {
+  height: 36px;
+  width: 80px;
+  box-sizing: border-box;
+  border: solid 1px #000000;
+  margin-right: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma .yz {
+  width: 150px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .dlbtn {
+  width: 340px;
+  height: 46px;
+  background-color: #f99135;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox {
+  width: 340px;
+  height: 18px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox .zidong {
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox .spanA > a {
+  color: #f99135;
+  font-size: 14px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form hr {
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox {
+  width: 340px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox .xieyi {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox > a {
+  color: #999999;
+  font-size: 12px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc {
+  width: 343px;
+  height: 376px;
+  display: none;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform {
+  width: 343px;
+  height: 317px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 23px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform .zuTel,
+.modal .modalMainbox .bigbox .formdivZc .zcform .psw,
+.modal .modalMainbox .bigbox .formdivZc .zcform .againPsw {
+  width: 330px;
+  height: 46px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform .zcbtn {
+  width: 340px;
+  height: 46px;
+  background-color: #f99135;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .dlNow {
+  width: 340px;
+  height: 13px;
+  font-size: 14px;
+  color: #f99135;
+  display: flex;
+  justify-content: flex-end;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+#tishi > p {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+}
+
+#tishi > p:hover {
+  background-color: blue;
+}
+
+.topHead {
+  width: 100%;
+  height: 40px;
+  background-color: #f0f0f0;
+}
+
+.topHead .topHeadbox {
+  margin: 0 auto;
+  height: 100%;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9a9a9a;
+  font-size: 14px;
+}
+
+.topHead .topHeadbox .topHeadboxR > span {
+  cursor: pointer;
+}
+
+.navbox {
+  width: 100%;
+  height: 90px;
+  border-bottom: 2px solid #f99135;
+}
+
+.navbox .navcenterbox {
+  margin: 0 auto;
+  height: 100%;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.navbox .navcenterbox .logobox {
+  width: 169px;
+  height: 50px;
+}
+
+.navbox .navcenterbox .arealist {
+  width: 138px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.navbox .navcenterbox .arealist .onelist {
+  width: 50px;
+  margin-left: 20px;
+  border: 0px;
+  appearance: none;
+  background-image: url(../image/倒三角.png);
+  background-repeat: no-repeat;
+  background-position: 35px 5px;
+  background-size: 10px;
+}
+
+.navbox .navcenterbox .arealist .onelist:focus {
+  outline: none;
+}
+
+.navbox .navcenterbox .naul {
+  width: 472px;
+  height: 90px;
+}
+
+.navbox .navcenterbox .naul > ul {
+  width: 472px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbox .navcenterbox .naul > ul > li {
+  box-sizing: border-box;
+  width: 90px;
+  height: 100%;
+  line-height: 90px;
+  font-size: 18px;
+  color: #333333;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbox .navcenterbox .naul > ul > li:hover {
+  background-color: #f99135;
+  color: white;
+}
+
+.navbox .navcenterbox .searchbox {
+  width: 422px;
+  height: 44px;
+  position: relative;
+}
+
+.navbox .navcenterbox .searchbox .searchTree {
+  width: 340px;
+  height: 44px;
+  border-radius: 22px;
+  border: solid 2px #f99135;
+  padding-left: 20px;
+  margin-left: 55px;
+}
+
+.navbox .navcenterbox .searchbox .searchTree:focus {
+  outline: none;
+}
+
+.navbox .navcenterbox .searchbox .searchimg {
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  height: 46px;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  margin-top: 130px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 380px;
+  background-image: url(../image/background.png);
+  background-repeat: no-repeat;
+}
+
+.banner .inf {
+  position: absolute;
+  top: 35px;
+  left: 140px;
+  display: flex;
+}
+
+.banner .inf .left {
+  border: 4px solid white;
+  width: 232px;
+  height: 322px;
+}
+
+.banner .inf .left img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .inf .center {
+  margin-left: 30px;
+  color: white;
+}
+
+.banner .inf .center p {
+  font-size: 14px;
+}
+
+.banner .inf .center p:nth-child(1) {
+  font-size: 26px;
+  line-height: 25px;
+}
+
+.banner .inf .center p:nth-child(2) {
+  margin-bottom: 15px;
+}
+
+.banner .inf .center span {
+  display: inline-block;
+  margin-top: 60px;
+  width: 122px;
+  height: 36px;
+  background-color: #756189;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 36px;
+}
+
+.banner .inf .center a {
+  width: 250px;
+  height: 40px;
+  background-color: #f99135;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 6px;
+}
+
+.banner .inf .right {
+  margin-left: 80px;
+  margin-top: 122px;
+  color: white;
+}
+
+.banner .inf .right span {
+  margin: 10px;
+}
+
+.banner .inf .right span strong {
+  color: #f99135;
+  margin-left: -8px;
+}
+
+.banner .inf .right span p {
+  margin-left: 68px;
+}
+
+.banner .inf .right p {
+  margin: 3px;
+  font-size: 12px;
+}
+
+.banner .inf .right strong {
+  font-size: 30px;
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.content .nav {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.content .nav a {
+  color: #000;
+  display: inline-block;
+}
+
+.content .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .wrapper .title {
+  width: 100%;
+  display: flex;
+  border-bottom: 2px solid #eee;
+  font-size: 18px;
+}
+
+.content .wrapper .title div {
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+.content .wrapper .title div:hover {
+  cursor: pointer;
+}
+
+.content .wrapper .title .click {
+  color: #f99135;
+  border-bottom: 2px solid #f99135;
+}
+
+.content .wrapper .item {
+  width: 100%;
+}
+
+.content .wrapper .item p {
+  font-size: 14px;
+  color: #333333;
+}
+
+.content .wrapper .item .inf {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.content .wrapper .item .inf span {
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 5px;
+  margin-bottom: 30px;
+  border-left: 3px solid #f99135;
+  position: relative;
+}
+
+.content .wrapper .item .inf span .allActors {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.content .wrapper .item .inf span .allActors:hover {
+  cursor: pointer;
+}
+
+.content .wrapper .item .inf span .allShorts {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #f99135;
+  color: #f99135;
+  border-radius: 16px;
+  font-size: 14px;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.content .wrapper .item .inf span .allShorts:hover {
+  cursor: pointer;
+}
+
+.content .wrapper .item .inf .actors {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .wrapper .item .inf .actors div {
+  margin-bottom: 10px;
+}
+
+.content .wrapper .item .inf .actors div:nth-child(1) {
+  width: 21%;
+}
+
+.content .wrapper .item .inf .actors div:nth-child(2) {
+  width: 79%;
+}
+
+.content .wrapper .item .inf .actors div p {
+  display: block;
+  font-size: 16px;
+  color: #333333;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.content .wrapper .item .inf .actors div p:nth-child(3) {
+  font-size: 14px;
+  color: #666;
+}
+
+.content .wrapper .item .inf .Shorts {
+  width: 100%;
+}
+
+.content .wrapper .item .inf .Shorts div {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.content .wrapper .item .inf .Shorts div .top {
+  border-top: none;
+  display: flex;
+  position: relative;
+}
+
+.content .wrapper .item .inf .Shorts div .top img {
+  width: 50px;
+  height: 50px;
+}
+
+.content .wrapper .item .inf .Shorts div .top .user {
+  padding-top: 0;
+  border-top: none;
+  width: 640px;
+}
+
+.content .wrapper .item .inf .Shorts div .top .user p {
+  display: block;
+  line-height: 25px;
+  position: relative;
+}
+
+.content .wrapper .item .inf .Shorts div .top .user p img {
+  display: inline-block;
+  width: 80px;
+  height: 17px;
+  position: absolute;
+  bottom: 0;
+  left: 25;
+}
+
+.content .wrapper .item .inf .Shorts div .top .user .dddd img {
+  width: 8px;
+  height: 10px;
+  position: relative;
+}
+
+.content .wrapper .item .inf .Shorts div .top .zan {
+  border-top: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 30px;
+}
+
+.content .wrapper .item .inf .Shorts div .top .zan img {
+  width: 60px;
+  height: 30px;
+}
+
+.content .wrapper .item .inf .Shorts div .bottom {
+  border-top: none;
+  width: 640px;
+  margin: 20px auto;
+}
+
+.content .wrapper .item .inf .yg {
+  width: 100%;
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.content .wrapper .item .inf .yg .bh {
+  width: 18px;
+  height: 18px;
+  background-color: #f99135;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  line-height: 18px;
+  color: white;
+  font-style: 15px;
+}
+
+.content .wrapper .item .inf .yg img {
+  width: 120px;
+  height: 100%;
+}
+
+.content .wrapper .item .inf .yg .word {
+  width: 212px;
+}
+
+.content .wrapper .item .inf .yg .word p {
+  font-size: 16px;
+  text-overflow: ellipsis;
+  width: 212px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content .wrapper .item .inf .yg .word span {
+  margin-top: 30px;
+  border: none;
+  font-size: 12px;
+  color: #999;
+  font-weight: normal;
+  background-image: url(../image/start.png);
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+  padding-left: 10px;
+}
+
+.content .wrapper .item .inf .xg {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .wrapper .item .inf .xg div img {
+  width: 106px;
+}
+
+.content .wrapper .item .inf .xg div i {
+  display: block;
+  text-align: center;
+  margin: 15px auto;
+  font-size: 14px;
+}
+
+.content .wrapper .item .inf .xg div i:nth-child(3) {
+  color: #f99135;
+}
+
+.content .wrapper .item2 {
+  width: 100%;
+}
+
+.content .wrapper .item2 span {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.content .wrapper .item2 span:nth-child(2) {
+  color: #999;
+  font-size: 14px;
+}
+
+.content .wrapper .item2 img {
+  display: block;
+}
+
+.content .wrapper .item2 p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.content .wrapper .item2 .ac {
+  width: 128px;
+}
+
+.content .wrapper .item2 .acs .box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content .wrapper .item2 .acs .box div {
+  margin: 8px 8px;
+}
+
+.content .wrapper .item2 .acs .box span {
+  margin: 0 auto;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+}
+
+.content .wrapper .left {
+  width: 730px;
+}
+
+.content .wrapper .right {
+  width: 370px;
+}
+
+.modal2 {
+  z-index: 44;
+  width: 550px;
+  height: 450px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto auto;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal2 .modalMainbox {
+  width: 550px;
+  height: 450px;
+  background-color: #ffffff;
+  margin: auto auto;
+  position: absolute;
+}
+
+.modal2 .modalMainbox .guan {
+  width: 44px;
+  height: 44px;
+  border-radius: 0px 0px 0px 44px;
+  background-color: #b2b2b2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal2 .modalMainbox p {
+  color: #f99135;
+  margin-top: 90px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+}
+
+.modal2 .modalMainbox textarea {
+  display: block;
+  margin: 0 auto;
+  width: 488px;
+  height: 158px;
+}
+
+.modal2 .modalMainbox div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.modal2 .modalMainbox .dddd img {
+  width: 10px;
+}
+
+#bl22 img {
+  width: 35px;
+}

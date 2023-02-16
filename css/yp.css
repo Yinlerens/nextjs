@@ -1,0 +1,712 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+#tishi > p {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+}
+
+#tishi > p:hover {
+  background-color: blue;
+}
+
+.topHead {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #f0f0f0;
+}
+
+.topHead .topHeadbox {
+  margin: 0 auto;
+  height: 100%;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9a9a9a;
+  font-size: 14px;
+}
+
+.topHead .topHeadbox .topHeadboxR > span {
+  cursor: pointer;
+}
+
+.navbox {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  z-index: 2;
+  top: 40px;
+  border-bottom: 2px solid #f99135;
+  background-color: #fff;
+}
+
+.navbox .navcenterbox {
+  margin: 0 auto;
+  height: 100%;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.navbox .navcenterbox .logobox {
+  width: 169px;
+  height: 50px;
+}
+
+.navbox .navcenterbox .arealist {
+  width: 138px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.navbox .navcenterbox .arealist .onelist {
+  width: 50px;
+  margin-left: 20px;
+  border: 0px;
+  appearance: none;
+  background-image: url(../image/倒三角.png);
+  background-repeat: no-repeat;
+  background-position: 35px 5px;
+  background-size: 10px;
+}
+
+.navbox .navcenterbox .arealist .onelist:focus {
+  outline: none;
+}
+
+.navbox .navcenterbox .naul {
+  width: 472px;
+  height: 90px;
+}
+
+.navbox .navcenterbox .naul > ul {
+  width: 472px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbox .navcenterbox .naul > ul > li {
+  box-sizing: border-box;
+  width: 90px;
+  height: 100%;
+  line-height: 90px;
+  font-size: 18px;
+  color: #333333;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbox .navcenterbox .naul > ul > li:nth-child(2) {
+  background-color: #f99135;
+  color: white;
+}
+
+.navbox .navcenterbox .naul > ul > li:hover {
+  background-color: #f99135;
+  color: white;
+}
+
+.navbox .navcenterbox .searchbox {
+  width: 422px;
+  height: 44px;
+  position: relative;
+}
+
+.navbox .navcenterbox .searchbox .searchTree {
+  width: 340px;
+  height: 44px;
+  border-radius: 22px;
+  border: solid 2px #f99135;
+  padding-left: 20px;
+  margin-left: 55px;
+}
+
+.navbox .navcenterbox .searchbox .searchTree:focus {
+  outline: none;
+}
+
+.navbox .navcenterbox .searchbox .searchimg {
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  height: 46px;
+  cursor: pointer;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 110px;
+}
+
+.box .title {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  background-color: #47464a;
+}
+
+.box .title a {
+  margin-right: 70px;
+  font-size: 16px;
+  color: #999999;
+}
+
+.box .title a:nth-child(1) {
+  color: #f99135;
+  position: relative;
+}
+
+.box .title .sanjiao {
+  position: absolute;
+  width: 0px;
+  border: 20px solid transparent;
+  border-bottom: 20px solid #fff;
+  bottom: -20px;
+  left: 10px;
+}
+
+.box .center {
+  width: 1200px;
+}
+
+.box .center .top {
+  width: 100%;
+  border: solid 1px #e5e5e5;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+
+.box .center .top .top1 {
+  font-size: 14px;
+  border-bottom: dotted 1px #e5e5e5;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+
+.box .center .top .top1 .left {
+  color: #999;
+  width: 50px;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.box .center .top .top1 .right {
+  color: #333;
+  width: 1126px;
+}
+
+.box .center .top .top1 .right ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box .center .top .top1 .right ul li {
+  line-height: 25px;
+  margin-right: 30px;
+  padding: 0 10px;
+}
+
+.box .center .top .top1 .right ul li:nth-child(1) {
+  height: 28px;
+  background-color: #f99135;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.box .center .top .top2 {
+  font-size: 14px;
+  border-bottom: dotted 1px #e5e5e5;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+
+.box .center .top .top2:nth-child(3) {
+  border: 0;
+}
+
+.box .center .top .top2 .left {
+  color: #999;
+  width: 50px;
+}
+
+.box .center .top .top2 .right {
+  color: #333;
+  width: 1126px;
+}
+
+.box .center .top .top2 .right ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box .center .top .top2 .right ul li {
+  line-height: 25px;
+  margin-right: 30px;
+  padding: 0 10px;
+}
+
+.box .center .top .top2 .right ul li:nth-child(1) {
+  height: 28px;
+  background-color: #f99135;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.box .center .top .top2 .right ul li:nth-child(3) {
+  color: #333;
+}
+
+.box .center .dx {
+  font-size: 14px;
+  margin: 30px 0;
+  color: #333333;
+}
+
+.box .center .dx label {
+  margin-right: 40px;
+  position: relative;
+  top: -2px;
+}
+
+.box .center .foot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 80px;
+}
+
+.box .center .foot ul {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box .center .foot ul li {
+  border: 1px solid #ccc;
+  line-height: 35px;
+  text-align: center;
+  height: 35px;
+  font-size: 16px;
+  width: 32px;
+}
+
+.box .center .foot ul li a {
+  color: #000;
+}
+
+.box .center .foot ul li:nth-child(1) {
+  background-color: #f99135;
+}
+
+.box .center .foot ul li:last-child {
+  width: 72px;
+}
+
+.box .bottom {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box .bottom .tp {
+  width: 160px;
+  margin: 10px 0;
+  margin-right: 25px;
+}
+
+.box .bottom .tp img {
+  width: 160px;
+  height: 240px;
+}
+
+.box .bottom .tp p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.box .bottom .tp p:nth-child(2) {
+  color: #003333;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  width: 100%;
+  height: 18px;
+  line-height: 18px;
+  overflow: hidden;
+  display: -webkit-box;
+  /*将对象作为弹性伸缩盒子模型显示*/
+  -webkit-line-clamp: 1;
+  /*限制文本的行数，只显示3行*/
+  -webkit-box-orient: vertical;
+  /*设置或检索伸缩盒对象的子元素的排列方式 */
+}
+
+.box .bottom .tp p:nth-child(3) {
+  font-size: 24px;
+  font-family: MicrosoftYaHei;
+  color: #f99135;
+}
+
+footer {
+  width: 100%;
+  height: 330px;
+}
+
+footer .explain {
+  width: 100%;
+  height: 253px;
+  background-color: #262426;
+  border-bottom: 1px solid #545454;
+  overflow: hidden;
+}
+
+footer .explain table {
+  margin: 0 auto;
+  margin-top: 34px;
+  width: 972px;
+  height: 200px;
+}
+
+footer .explain table thead {
+  width: 100%;
+}
+
+footer .explain table thead tr {
+  width: 100%;
+  height: 34px;
+}
+
+footer .explain table thead tr th {
+  width: 25%;
+  text-align: left;
+}
+
+footer .explain table thead tr th span {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+footer .explain table thead tr th .fill {
+  margin-top: 11px;
+  width: 50px;
+  height: 3px;
+  background-color: #f99135;
+}
+
+footer .explain table tbody {
+  width: 100%;
+}
+
+footer .explain table tbody tr {
+  width: 100%;
+  height: 26px;
+}
+
+footer .explain table tbody tr td {
+  width: 25%;
+  text-align: left;
+}
+
+footer .explain table tbody tr td a {
+  font-size: 12px;
+  color: #e2e2e2;
+}
+
+footer .introduce {
+  width: 100%;
+  height: 76px;
+  background-color: #262426;
+  overflow: hidden;
+}
+
+footer .introduce .text {
+  margin: 0 auto;
+  margin-top: 17px;
+  width: 385px;
+  height: 36px;
+}
+
+footer .introduce .text p:nth-child(1) {
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer .introduce .text p:nth-child(2) {
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.modal {
+  width: 444px;
+  height: 532px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal .modalMainbox {
+  width: 424px;
+  height: 512px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+.modal .modalMainbox .guan {
+  width: 44px;
+  height: 44px;
+  border-radius: 0px 0px 0px 44px;
+  background-color: #b2b2b2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox {
+  width: 343px;
+  height: 410px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal .modalMainbox .bigbox .title {
+  width: 343px;
+  height: 34px;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: solid 1px #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.modal .modalMainbox .bigbox .title .titleRegister {
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  margin-right: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .title .titleLogin {
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .formdivDl {
+  width: 343px;
+  height: 376px;
+  display: none;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .tel {
+  width: 330px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .psw {
+  width: 330px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma {
+  width: 340px;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma .yanzhen {
+  height: 36px;
+  width: 80px;
+  box-sizing: border-box;
+  border: solid 1px #000000;
+  margin-right: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma .yz {
+  width: 150px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .dlbtn {
+  width: 340px;
+  height: 46px;
+  background-color: #f99135;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox {
+  width: 340px;
+  height: 18px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox .zidong {
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox .spanA > a {
+  color: #f99135;
+  font-size: 14px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form hr {
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox {
+  width: 340px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox .xieyi {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox > a {
+  color: #999999;
+  font-size: 12px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc {
+  width: 343px;
+  height: 376px;
+  display: none;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform {
+  width: 343px;
+  height: 317px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 23px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform .zuTel,
+.modal .modalMainbox .bigbox .formdivZc .zcform .psw,
+.modal .modalMainbox .bigbox .formdivZc .zcform .againPsw {
+  width: 330px;
+  height: 46px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform .zcbtn {
+  width: 340px;
+  height: 46px;
+  background-color: #f99135;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .dlNow {
+  width: 340px;
+  height: 13px;
+  font-size: 14px;
+  color: #f99135;
+  display: flex;
+  justify-content: flex-end;
+  letter-spacing: 3px;
+  cursor: pointer;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../css/移动端页面2.css">
+</head>
+<body>
+    <div class="top">
+     
+        <img src="./../image/登陆以及注册/未标题-1_14.png" alt="">
+         <h3>特色电影</h3>
+         <div>
+             <input type="button" value="正在上映">
+             <input type="button" value="即将上映">
+         </div>
+        </div>
+        <div class="bottom">
+            <div class="box1">
+                <div class="left"><img src="./../image/movie-icon5.jpg" alt=""></div>
+                <div class="right">
+                   <div class="t1">中国医生</div>
+                   <p><span class="bt">类型</span> <span class="bt1">动作,冒险,科幻</span></p>
+                   <p><span class="bt">片长</span> <span class="bt1">113分钟</span></p>
+                   <p><span class="bt">评分</span> <span class="bt1">8.5</span></p>
+                   <div class="anniu">
+                       <input type="button" value="立即购票">
+                   </div>
+                   
+                </div>
+            </div>
+            <div class="box1">
+                <div class="left"><img src="./../image/movie-icon3.jpg" alt=""></div>
+                <div class="right">
+                   <div class="t1">感恩未来</div>
+                   <p><span class="bt">类型</span> <span class="bt1">爱情</span></p>
+                   <p><span class="bt">片长</span> <span class="bt1">113分钟</span></p>
+                   <p><span class="bt">评分</span> <span class="bt1">8.5</span></p>
+                   <div class="anniu">
+                       <input type="button" value="立即购票">
+                   </div>
+                   
+                </div>
+            </div>
+            <div class="box1">
+                <div class="left"><img src="./../image/movie-icon6.jpg" alt=""></div>
+                <div class="right">
+                   <div class="t1">地道站</div>
+                   <p><span class="bt">类型</span> <span class="bt1">动作,冒险,科幻</span></p>
+                   <p><span class="bt">片长</span> <span class="bt1">113分钟</span></p>
+                   <p><span class="bt">评分</span> <span class="bt1">8.5</span></p>
+                   <div class="anniu">
+                       <input type="button" value="立即购票">
+                   </div>
+                   
+                </div>
+            </div>
+        </div>
+        <script>
+            function demo(){
+    //获取视口宽度
+    var iw=window.innerWidth;
+    // console.log(iw);
+    if(iw>750){
+        //ipad
+        document.documentElement.style.fontSize=iw/7.5+'px';
+    }else{
+        //手机
+        document.documentElement.style.fontSize='100px';
+    }
+}
+// demo();
+window.onload=demo;
+        </script>
+</body>
+</html>

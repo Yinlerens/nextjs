@@ -1,0 +1,962 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+#tishi > p {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+}
+
+#tishi > p:hover {
+  background-color: blue;
+}
+
+.topHead {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #f0f0f0;
+}
+
+.topHead .topHeadbox {
+  margin: 0 auto;
+  height: 100%;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9a9a9a;
+  font-size: 14px;
+}
+
+.topHead .topHeadbox .topHeadboxR > span {
+  cursor: pointer;
+}
+
+.navbox {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  z-index: 2;
+  top: 40px;
+  border-bottom: 2px solid #f99135;
+  background-color: #fff;
+}
+
+.navbox .navcenterbox {
+  margin: 0 auto;
+  height: 100%;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.navbox .navcenterbox .logobox {
+  width: 169px;
+  height: 50px;
+}
+
+.navbox .navcenterbox .arealist {
+  width: 138px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.navbox .navcenterbox .arealist .onelist {
+  width: 50px;
+  margin-left: 20px;
+  border: 0px;
+  appearance: none;
+  background-image: url(../image/倒三角.png);
+  background-repeat: no-repeat;
+  background-position: 35px 5px;
+  background-size: 10px;
+}
+
+.navbox .navcenterbox .arealist .onelist:focus {
+  outline: none;
+}
+
+.navbox .navcenterbox .naul {
+  width: 472px;
+  height: 90px;
+}
+
+.navbox .navcenterbox .naul > ul {
+  width: 472px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbox .navcenterbox .naul > ul > li {
+  box-sizing: border-box;
+  width: 90px;
+  height: 100%;
+  line-height: 90px;
+  font-size: 18px;
+  color: #333333;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbox .navcenterbox .naul > ul > li:hover {
+  background-color: #f99135;
+  color: white;
+}
+
+.navbox .navcenterbox .searchbox {
+  width: 422px;
+  height: 44px;
+  position: relative;
+}
+
+.navbox .navcenterbox .searchbox .searchTree {
+  width: 340px;
+  height: 44px;
+  border-radius: 22px;
+  border: solid 2px #f99135;
+  padding-left: 20px;
+  margin-left: 55px;
+}
+
+.navbox .navcenterbox .searchbox .searchTree:focus {
+  outline: none;
+}
+
+.navbox .navcenterbox .searchbox .searchimg {
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  height: 46px;
+  cursor: pointer;
+}
+
+.slideshow {
+  margin-top: 110px;
+  width: 100%;
+  height: 360px;
+  margin-bottom: 41px;
+}
+
+.slideshow > img {
+  width: 100%;
+  height: 100%;
+}
+
+.listbox {
+  width: 1200px;
+  height: 45px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 58px;
+}
+
+.listbox .listboxTitle {
+  height: 44px;
+  width: 150px;
+  background-color: #f99135;
+  border-radius: 0px 22px 22px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+}
+
+.listbox select {
+  width: 206px;
+  height: 44px;
+  border-radius: 22px;
+  border: solid 2px #cccccc;
+  padding-left: 18px;
+  color: #8c8c8c;
+  appearance: none;
+  background-image: url(../image/倒三角.png);
+  background-repeat: no-repeat;
+  background-position: 170px 18px;
+  background-size: 10px;
+}
+
+.listbox select:focus {
+  outline: none;
+}
+
+.listbox .buytickets {
+  width: 120px;
+  height: 44px;
+  background-color: #f99135;
+  border-radius: 22px;
+  border: 0px;
+  font-size: 18px;
+  color: white;
+}
+
+.main {
+  width: 1200px;
+  height: 1308px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 86px;
+}
+
+.main .leftMain {
+  width: 732px;
+  height: 100%;
+  margin-right: 106px;
+}
+
+.main .leftMain .mainleftTop {
+  height: 596px;
+  width: 732px;
+  margin-bottom: 33px;
+}
+
+.main .leftMain .mainleftTop .mainleftTopTitle {
+  width: 732px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  color: #f99135;
+  justify-content: space-between;
+}
+
+.main .leftMain .mainleftTop .mainleftTopTitle .nowHotleftTop {
+  font-size: 26px;
+}
+
+.main .leftMain .mainleftTop .mainleftTopTitle .seeMoreAleftTop {
+  color: #f99135;
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies {
+  width: 732px;
+  height: 570px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies {
+  width: 160px;
+  height: 259px;
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies .leftmoviesImg {
+  width: 160px;
+  height: 220px;
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies .leftmoviesImg > img {
+  width: 160px;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies .leftmoviesImg > img:hover {
+  box-shadow: 0 0 2px 4px #008c8c;
+  transform: scale(1.1);
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies .leftmoviesNameORstore {
+  width: 158px;
+  height: 38px;
+  display: flex;
+  justify-content: space-evenly;
+  border: solid 1px #e8e8e8;
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies .leftmoviesNameORstore .leftmoviesName {
+  width: 108px;
+  height: 38px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  color: #003333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /*将对象作为弹性伸缩盒子模型显示*/
+  -webkit-line-clamp: 1;
+  /*限制文本的行数，只显示3行*/
+  -webkit-box-orient: vertical;
+  /*设置或检索伸缩盒对象的子元素的排列方式 */
+}
+
+.main .leftMain .mainleftTop .mainleftTopMovies .leftmovies .leftmoviesNameORstore .leftmoviesStore {
+  width: 21px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f99135;
+  font-size: 14px;
+}
+
+.main .leftMain .mainleftDown {
+  width: 732px;
+  height: 653px;
+}
+
+.main .leftMain .mainleftDown .mainleftDownTitle {
+  width: 732px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  color: #f99135;
+  justify-content: space-between;
+}
+
+.main .leftMain .mainleftDown .mainleftDownTitle .nowHotleftDown {
+  font-size: 26px;
+}
+
+.main .leftMain .mainleftDown .mainleftDownTitle .seeMoreAleftDown {
+  color: #f99135;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies {
+  width: 732px;
+  height: 653px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown {
+  width: 160px;
+  height: 288px;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .leftmoviesImgDown {
+  width: 160px;
+  height: 220px;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .leftmoviesImgDown > img {
+  width: 160px;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .leftmoviesImgDown > img:hover {
+  box-shadow: 0 0 2px 4px #008c8c;
+  transform: scale(1.1);
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .leftmoviesNameORstoreDown {
+  width: 158px;
+  height: 38px;
+  display: flex;
+  justify-content: space-evenly;
+  border: solid 1px #e8e8e8;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .leftmoviesNameORstoreDown .leftmoviesNameDown {
+  width: 108px;
+  height: 38px;
+  display: flex;
+  line-height: 38px;
+  justify-content: center;
+  color: #003333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /*将对象作为弹性伸缩盒子模型显示*/
+  -webkit-line-clamp: 1;
+  /*限制文本的行数，只显示3行*/
+  -webkit-box-orient: vertical;
+  /*设置或检索伸缩盒对象的子元素的排列方式 */
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .leftmoviesNameORstoreDown .leftmoviesStoreDown {
+  width: 21px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f99135;
+  font-size: 14px;
+}
+
+.main .leftMain .mainleftDown .mainleftDownMovies .leftmoviesDown .releaseDate {
+  width: 160px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 14px;
+  color: #999999;
+}
+
+.main .rightMain {
+  width: 363px;
+  height: 100%;
+}
+
+.main .rightMain .mainrightTop {
+  height: 450px;
+  width: 363px;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main .rightMain .mainrightTop .mainrightTopTiele {
+  height: 26px;
+  width: 363px;
+  color: #f99135;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main .rightMain .mainrightTop .mainrightTopTiele .moviesactivity {
+  font-size: 26px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopTiele .moviesMore {
+  font-size: 14px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter {
+  width: 360px;
+  height: 194px;
+  border: solid 1px #e8e8e8;
+  display: flex;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter .mainrightTopimage {
+  width: 140px;
+  height: 194px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter .mainrightTopimage > img {
+  width: 100%;
+  height: 100%;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter .moviesMessage {
+  width: 220px;
+  height: 194px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter .moviesMessage .reightTopmoviesname {
+  font-size: 18px;
+  margin-bottom: 16px;
+  margin-left: 10px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter .moviesMessage .reightTopmoviestime {
+  font-size: 16px;
+  color: #999999;
+  margin-bottom: 11px;
+  margin-left: 10px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopCenter .moviesMessage .wantsee {
+  color: #f99135;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown {
+  width: 363px;
+  height: 185px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown .movies1or2 {
+  width: 170px;
+  height: 185px;
+  border: solid 1px #e8e8e8;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown .movies1or2 .moviesImage {
+  width: 170px;
+  height: 118px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown .movies1or2 .moviesImage > img {
+  width: 170px;
+  height: 118px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown .movies1or2 .moviesnametime {
+  background-color: #f6f6f6;
+  height: 66px;
+  width: 170px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown .movies1or2 .moviesnametime .mainrightTopDownName {
+  font-size: 17px;
+  width: 149px;
+  height: 19px;
+  margin-left: 10px;
+}
+
+.main .rightMain .mainrightTop .mainrightTopDown .movies1or2 .moviesnametime .mainrightTopDownTime {
+  width: 128px;
+  height: 14px;
+  color: #999999;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.main .rightMain .mainrightDown {
+  height: 486px;
+  width: 363px;
+}
+
+.main .rightMain .mainrightDown .mainrightDownTiele {
+  height: 26px;
+  width: 363px;
+  color: #f99135;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.main .rightMain .mainrightDown .mainrightDownTiele .Downmoviesactivity {
+  font-size: 26px;
+}
+
+.main .rightMain .mainrightDown .mainrightDownTiele .DownmoviesMore {
+  font-size: 14px;
+}
+
+.main .rightMain .mainrightDown .NO1 {
+  width: 358px;
+  height: 74px;
+  display: flex;
+  margin-bottom: 28px;
+}
+
+.main .rightMain .mainrightDown .NO1 .No1img {
+  width: 120px;
+  height: 68px;
+  background-color: #eeeeee;
+}
+
+.main .rightMain .mainrightDown .NO1 .No1message {
+  width: 290px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+}
+
+.main .rightMain .mainrightDown .NO1 .No1message .No1messageSpan {
+  font-size: 14px;
+  padding-left: 13px;
+}
+
+.main .rightMain .mainrightDown .two-ten {
+  width: 363px;
+  height: 341px;
+  font-size: 14px;
+  color: #333333;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.main .rightMain .mainrightDown .two-ten .no2 {
+  width: 347px;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .rightMain .mainrightDown .two-ten .no2 .no2span {
+  color: #f99135;
+  font-size: 16px;
+}
+
+.main .rightMain .mainrightDown .two-ten .no3 {
+  width: 347px;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: #f99135;
+}
+
+.main .rightMain .mainrightDown .two-ten .no3 .no3span {
+  font-size: 16px;
+  color: #f99135;
+}
+
+.main .rightMain .mainrightDown .two-ten .no4-10 {
+  width: 347px;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .rightMain .mainrightDown .two-ten .no4-10 .no4-10span {
+  color: #acacac;
+  font-size: 16;
+}
+
+footer {
+  width: 100%;
+  height: 330px;
+}
+
+footer .explain {
+  width: 100%;
+  height: 253px;
+  background-color: #262426;
+  border-bottom: 1px solid #545454;
+  overflow: hidden;
+}
+
+footer .explain table {
+  margin: 0 auto;
+  margin-top: 34px;
+  width: 972px;
+  height: 200px;
+}
+
+footer .explain table thead {
+  width: 100%;
+}
+
+footer .explain table thead tr {
+  width: 100%;
+  height: 34px;
+}
+
+footer .explain table thead tr th {
+  width: 25%;
+  text-align: left;
+}
+
+footer .explain table thead tr th span {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+footer .explain table thead tr th .fill {
+  margin-top: 11px;
+  width: 50px;
+  height: 3px;
+  background-color: #f99135;
+}
+
+footer .explain table tbody {
+  width: 100%;
+}
+
+footer .explain table tbody tr {
+  width: 100%;
+  height: 26px;
+}
+
+footer .explain table tbody tr td {
+  width: 25%;
+  text-align: left;
+}
+
+footer .explain table tbody tr td a {
+  font-size: 12px;
+  color: #e2e2e2;
+}
+
+footer .introduce {
+  width: 100%;
+  height: 76px;
+  background-color: #262426;
+  overflow: hidden;
+}
+
+footer .introduce .text {
+  margin: 0 auto;
+  margin-top: 17px;
+  width: 385px;
+  height: 36px;
+}
+
+footer .introduce .text p:nth-child(1) {
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer .introduce .text p:nth-child(2) {
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.modal {
+  width: 444px;
+  height: 532px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal .modalMainbox {
+  width: 424px;
+  height: 512px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+.modal .modalMainbox .guan {
+  width: 44px;
+  height: 44px;
+  border-radius: 0px 0px 0px 44px;
+  background-color: #b2b2b2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox {
+  width: 343px;
+  height: 410px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal .modalMainbox .bigbox .title {
+  width: 343px;
+  height: 34px;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: solid 1px #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.modal .modalMainbox .bigbox .title .titleRegister {
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  margin-right: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .title .titleLogin {
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .formdivDl {
+  width: 343px;
+  height: 376px;
+  display: none;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .tel {
+  width: 330px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .psw {
+  width: 330px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma {
+  width: 340px;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma .yanzhen {
+  height: 36px;
+  width: 80px;
+  box-sizing: border-box;
+  border: solid 1px #000000;
+  margin-right: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .yanzhenma .yz {
+  width: 150px;
+  height: 36px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .dlbtn {
+  width: 340px;
+  height: 46px;
+  background-color: #f99135;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox {
+  width: 340px;
+  height: 18px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox .zidong {
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .zidongBox .spanA > a {
+  color: #f99135;
+  font-size: 14px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form hr {
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox {
+  width: 340px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox .xieyi {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivDl form .xieyiBox > a {
+  color: #999999;
+  font-size: 12px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc {
+  width: 343px;
+  height: 376px;
+  display: none;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform {
+  width: 343px;
+  height: 317px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 23px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform .zuTel,
+.modal .modalMainbox .bigbox .formdivZc .zcform .psw,
+.modal .modalMainbox .bigbox .formdivZc .zcform .againPsw {
+  width: 330px;
+  height: 46px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: solid 1px #d8d8d8;
+  padding-left: 10px;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .zcform .zcbtn {
+  width: 340px;
+  height: 46px;
+  background-color: #f99135;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.modal .modalMainbox .bigbox .formdivZc .dlNow {
+  width: 340px;
+  height: 13px;
+  font-size: 14px;
+  color: #f99135;
+  display: flex;
+  justify-content: flex-end;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
