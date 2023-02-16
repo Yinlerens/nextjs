@@ -3,14 +3,13 @@ stages:
 
 deploy:
   stage: deploy
-  image: curlimages/curl:7.77.0 # 使用Curl镜像
+  image: amazon/aws-cli:2.4.0 # 使用AWS CLI镜像
   script:
-    # 安装coscmd
-    - curl https://cdn.jsdelivr.net/gh/tencentyun/coscmd/release/coscmd_linux64 -o /usr/local/bin/coscmd
-    - chmod +x /usr/local/bin/coscmd
-    # 配置coscmd
-    - coscmd config -a $COS_SECRET_ID -s $COS_SECRET_KEY -r $COS_REGION -b $COS_BUCKET
+    # 配置AWS CLI
+    - aws configure set aws_access_key_id $COS_SECRET_ID
+    - aws configure set aws_secret_access_key $COS_SECRET_KEY
+    - aws configure set default.region $COS_REGION
     # 上传文件
-    - coscmd upload ./ / --recursive
+    - aws s3 sync ./ s3://$COS_BUCKET
   only:
     - branch_t
