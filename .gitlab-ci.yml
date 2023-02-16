@@ -1,0 +1,10 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  image: tencentyun/coscmd:latest
+  script:
+    - coscmd config -a $COS_SECRET_ID -s $COS_SECRET_KEY -r $COS_REGION -b $COS_BUCKET -m put ./ / --recursive
+  only:
+    - branch_t
