@@ -13,6 +13,8 @@ const LoginForm = () => {
   const [shouldFetch, setShouldFetch] = useState(false);
   const router = useRouter();
   const onFinish = (value: body) => {
+    console.log(value);
+    router.push('login/api');
     setLoading(true);
     setShouldFetch(true);
     setLoginForm(value);
@@ -28,12 +30,12 @@ const LoginForm = () => {
       autoComplete="off"
     >
       <Form.Item name="username" rules={[{ required: true, message: '请输入用户名' }]}>
-        <Input placeholder="用户名：admin / user" prefix={<UserOutlined />} />
+        <Input placeholder="用户名:admin / user" prefix={<UserOutlined />} />
       </Form.Item>
       <Form.Item name="password" rules={[{ required: true, message: '请输入密码' }]}>
         <Input.Password
           autoComplete="new-password"
-          placeholder="密码：123456"
+          placeholder="密码:123456"
           prefix={<LockOutlined />}
         />
       </Form.Item>
