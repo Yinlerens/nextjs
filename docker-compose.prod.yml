@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  next-app:
-    container_name: next-app
+  t3:
+    container_name: t3
     build:
-      context: ./next-app
+      context: ./t3
       dockerfile: prod.Dockerfile
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
