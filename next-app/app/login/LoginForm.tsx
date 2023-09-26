@@ -20,10 +20,10 @@ const LoginForm = () => {
       method: 'POST',
       body: JSON.stringify(value)
     });
-    const { data, success } = await res.json();
+    const { data, success, message: Mes } = await res.json();
     if (success) {
       setLoading(false);
-      message.success('登陆成功')
+      message.success('登陆成功');
       Cookies.set('token', data.token, { expires: 7 });
       Cookies.set('user', JSON.stringify(data));
       if (value.remember) {
@@ -35,7 +35,7 @@ const LoginForm = () => {
       }
     } else {
       setLoading(false);
-      message.error(data.message)
+      message.error(Mes);
     }
   };
   return (
@@ -43,22 +43,18 @@ const LoginForm = () => {
       form={form}
       name="normal_login"
       className="login-form"
-      initialValues={{ remember: true }}
+      initialValues={{
+        remember: true,
+        username: Cookies.get('username'),
+        password: Cookies.get('password')
+      }}
       onFinish={onFinish}
     >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: '请输入用户名!' }]}
-        initialValue={Cookies.get('username')}
-      >
+      <Form.Item name="username" rules={[{ required: true, message: '请输入用户名!' }]}>
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
       </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: '请输入密码!' }]}
-        initialValue={Cookies.get('password')}
-      >
-        <Input
+      <Form.Item name="password" rules={[{ required: true, message: '请输入密码!' }]}>
+        <Input.Password
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
           placeholder="Password"
